@@ -1,0 +1,206 @@
+/*custom properties*/
+:root{
+    --text-color:#ddd5d5;
+
+}
+
+/*Box modeling with universal sekection */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*now i understand the purpose of box-sizing:border box in terms on an element width and padding*/
+}
+
+body{
+    background-color: black;
+}
+
+
+
+/*header start*/
+header {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 20px 10px;
+}
+header >  nav{
+display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+/*using css grid and flex-box for my header layout*/
+
+header nav h1{
+    color: var(--text-color);
+     flex: 1;
+     animation-name: SlideUp;
+     animation-duration: 3s;
+      animation-iteration-count: 2s;
+      transition: all .5s ease;
+      font-weight: 100;
+      margin-left: 30px;
+   
+
+}
+/*grouping selection*/
+header nav  ul{
+    display: flex;
+    margin-left: 70px;
+    flex: 1;
+    animation-name: opacity;
+    animation-duration: 40s;
+
+}
+
+header nav  ul li{
+    list-style-type: none;
+
+}
+
+header nav  ul li a{
+    color: var(--text-color);
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 20px;
+    transition: transform 0.3s;
+
+}
+header nav  ul li a:hover{
+    color: rgb(168, 242, 219);
+    transform: scale(1.2);
+      
+}
+
+
+/*accounts*/
+
+.accounts{
+    flex: 1;
+}
+
+
+.accounts button{
+    padding: 8px 20px;
+    border-radius: 7px;
+    border: none;
+    margin-left: 10px;
+    transition: all .3s ease;
+    animation-name: opacity;
+    animation-duration: 40s;
+}
+.accounts button:hover{
+    opacity: .8;
+    
+}
+button:nth-child(1){
+    font-size: 14px;
+    color: var(--text-color);
+background: linear-gradient( rgb(68, 162, 159),rgb(184, 104, 144));
+
+}
+
+
+
+/*home-hero*/
+#home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    gap: 3px;
+  
+}
+
+
+
+/*loading content*/
+.loading-content div{
+    margin-left:4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgb(169, 167, 167);
+  display: inline-block;
+  /*animation-name: scale ;
+  animation-duration:1s;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+*/
+  animation: scale 1s 3s infinite;
+}
+
+
+/*creating delays on my animation */
+.loading-content div:nth-child(1){
+    animation-delay: 0.2s;
+}
+.loading-content div:nth-child(2){
+    animation-delay: 0.3s;
+}
+
+.loading-content div:nth-child(3){
+    animation-delay: 0.4s;
+}
+
+.loading-content div:nth-child(4){
+    animation-delay: 0.5s;
+}
+
+
+
+/*key frames*/
+@keyframes scale {
+    0%,100%{
+        transform: scale(0.01);
+        opacity: .8;
+    }
+    50%{
+        transform: scale(1.5);
+
+}
+
+}
+@keyframes SlideUp {
+    0%{
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        opacity: .8;
+        transform: translateY(500px);
+    }
+    50%,60%,70%,80%,90%{
+        left: 50%;
+        position: absolute;
+        top: 50%;
+          transform: translateY(-50%,-50%);
+          opacity: .4;
+    }
+    100%{
+        top: 0;
+        left: 0;
+        transition: all .5s ease;
+        opacity: 1;
+    }
+    
+}
+
+
+@keyframes opacity {
+    0%{
+        opacity: 0;
+
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
